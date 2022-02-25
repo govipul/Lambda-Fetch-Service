@@ -20,6 +20,4 @@ public class RequestValue {
     private Date validFrom;
     @JsonProperty("valid_to")
     private Date validTo;
-
-
 }
