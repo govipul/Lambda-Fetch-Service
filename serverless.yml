@@ -90,9 +90,9 @@ resources:
           - AttributeName: Price
             AttributeType: N
           - AttributeName: Start_Time
-            AttributeType: N
+            AttributeType: S
           - AttributeName: End_Time
-            AttributeType: N
+            AttributeType: S
         KeySchema:
           - AttributeName: Id
             KeyType: HASH
