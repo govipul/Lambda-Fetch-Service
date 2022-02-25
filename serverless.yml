@@ -78,35 +78,30 @@ functions:
 # you can add CloudFormation resource templates here
 resources:
   Resources:
-    NewResource:
+    PriceDynamoDBTable:
       Type: AWS::DynamoDB::Table
       Properties:
         TableName: STROMPRICEINFO
         AttributeDefinitions:
           - AttributeName: Id
-            AttributeType: N
+            AttributeType: S
           - AttributeName: Date
             AttributeType: S
-          - AttributeName: Price
-            AttributeType: N
-          - AttributeName: Start_Time
-            AttributeType: S
-          - AttributeName: End_Time
-            AttributeType: S
+          #- AttributeName: Price
+          #  AttributeType: N
+          #- AttributeName: Start_Time
+          #  AttributeType: S
+          #- AttributeName: End_Time
+          #  AttributeType: S
         KeySchema:
           - AttributeName: Id
             KeyType: HASH
-          - AttributeName: Date
-            KeyType: RANGE
-          - AttributeName: Price
-            KeyType: RANGE
-          - AttributeName: Start_Time
-            KeyType: RANGE
-          - AttributeName: End_Time
-            KeyType: RANGE
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
+          - KeyType: RANGE
+            AttributeName: Date
+        BillingMode: PAY_PER_REQUEST
+        #ProvisionedThroughput:
+          #ReadCapacityUnits: 1
+          #WriteCapacityUnits: 1
           #  Outputs:
 #     NewOutput:
 #       Description: "Description for the output"
