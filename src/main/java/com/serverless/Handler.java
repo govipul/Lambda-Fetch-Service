@@ -29,6 +29,7 @@ public class Handler implements RequestHandler<Map<String, Object>, ApiGatewayRe
 
 		try {
 			final List<StromPriceInfo> data = fetchService.getData("NO01");
+			LOG.info("Data Value is : " + data);
 			return ApiGatewayResponse.builder()
 					.setStatusCode(200)
 					.setObjectBody(responseBody)
